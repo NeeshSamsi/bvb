@@ -5,7 +5,6 @@ import NavBar from "../components/NavBar";
 const Home: NextPage = () => {
   return (
     <>
-      <NavBar />
       <div>
         <h1 className="text-3xl text-gray-800">Hello Next x Tailwind</h1>
       </div>
