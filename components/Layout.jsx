@@ -1,4 +1,4 @@
-import NavBar from "./NavBar";
+import NavBar from "./NavBar"
 
 const Layout = ({ children }) => {
   return (
@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
       <NavBar />
       <main className="container mx-auto">{children}</main>
     </>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout
