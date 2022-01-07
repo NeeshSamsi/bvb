@@ -8,7 +8,7 @@ const NavBar = () => {
   const router = useRouter()
 
   return (
-    <nav className="container mx-auto py-5 flex justify-between items-center">
+    <nav className="container mx-auto py-6 flex justify-between items-center">
       <Link href="/">
         <a className="flex items-center space-x-6">
           <div className="w-20">
