@@ -9,3 +9,28 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model Invoice {
+  id             String   @id @default(cuid())
+  invoiceNumber  String
+  date           DateTime
+  name           String
+  class          String
+  address        String
+  mobileNumber   String
+  emailId        String
+  pinCode        String
+  state          String
+  admissionFee   Float
+  tuitionFee     Float
+  otherFee       Float
+  examinationFee Float
+  annualFee      Float
+  lateMiscFee    Float
+  totalFee       Float
+  receivedBy     String
+  totalInWords   String
+  paymentMethod  String
+  dateInWords    String
+  branch         String
+}
