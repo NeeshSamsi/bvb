@@ -18,7 +18,7 @@ const NavBar = () => {
               className="w-full h-full"
             />
           </div>
-          <h1 className="font-bold text-3xl text-blue-800">SNS Admin</h1>
+          <h1 className="font-bold text-3xl text-blue-700">SNS Admin</h1>
         </a>
       </Link>
       <div className="flex items-center space-x-6">
