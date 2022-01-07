@@ -9,17 +9,28 @@ const NavBar = () => {
 
   return (
     <nav className="container mx-auto py-5 flex justify-between items-center">
+      <Link href="/">
+        <a className="flex items-center space-x-6">
+          <div className="w-20">
+            <Image
+              src={BhavansLogo}
+              alt="Bhavan's Logo"
+              className="w-full h-full"
+            />
+          </div>
+          <h1 className="font-bold text-3xl text-blue-800">SNS Admin</h1>
+        </a>
+      </Link>
       <div className="flex items-center space-x-6">
-        <div className="w-20">
-          <Image
-            src={BhavansLogo}
-            alt="Bhavan's Logo"
-            className="w-full h-full"
-          />
-        </div>
-        <h1 className="font-bold text-3xl text-blue-800">SNS Admin</h1>
-      </div>
-      <div>
+        <Link href="/">
+          <a
+            className={`font-medium text-xl text-blue-700 hover:underline ${
+              router.pathname === "/" ? "underline" : ""
+            }`}
+          >
+            Home
+          </a>
+        </Link>
         <Link href="/receipts">
           <a
             className={`font-medium text-xl text-blue-700 hover:underline ${
