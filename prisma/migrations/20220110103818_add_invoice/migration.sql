@@ -1,0 +1,25 @@
+-- CreateTable
+CREATE TABLE "Invoice" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "invoiceNumber" TEXT NOT NULL,
+    "date" DATETIME NOT NULL,
+    "name" TEXT NOT NULL,
+    "class" TEXT NOT NULL,
+    "address" TEXT NOT NULL,
+    "mobileNumber" TEXT NOT NULL,
+    "emailId" TEXT NOT NULL,
+    "pinCode" TEXT NOT NULL,
+    "state" TEXT NOT NULL,
+    "admissionFee" REAL NOT NULL,
+    "tuitionFee" REAL NOT NULL,
+    "otherFee" REAL NOT NULL,
+    "examinationFee" REAL NOT NULL,
+    "annualFee" REAL NOT NULL,
+    "lateMiscFee" REAL NOT NULL,
+    "totalFee" REAL NOT NULL,
+    "receivedBy" TEXT NOT NULL,
+    "totalInWords" TEXT NOT NULL,
+    "paymentMethod" TEXT NOT NULL,
+    "dateInWords" TEXT NOT NULL,
+    "branch" TEXT NOT NULL
+);
