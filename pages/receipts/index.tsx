@@ -1,7 +1,8 @@
+import type { NextPage } from "next"
 import Head from "next/head"
 import Link from "next/link"
 
-const receipts = () => {
+const Receipts: NextPage = () => {
   return (
     <>
       <Head>
@@ -20,4 +21,4 @@ const receipts = () => {
   )
 }
 
-export default receipts
+export default Receipts
