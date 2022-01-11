@@ -16,7 +16,8 @@ model Receipt {
   date           DateTime
   name           String
   class          String
-  address        String
+  addressLine1   String
+  addressLine2   String
   mobileNumber   String
   emailId        String
   pinCode        String
