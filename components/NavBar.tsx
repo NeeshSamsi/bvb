@@ -34,7 +34,7 @@ const NavBar = () => {
         <Link href="/receipts">
           <a
             className={`font-medium text-xl text-blue-700 hover:underline ${
-              router.pathname === "/" ? "underline" : ""
+              router.pathname === "/receipts" ? "underline" : ""
             }`}
           >
             Receipts
