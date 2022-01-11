@@ -20,7 +20,7 @@ const Receipts: NextPage<Props> = ({ receipts }) => {
       </Head>
 
       <div className="py-8">
-        <Link href="/receipt/new">
+        <Link href="/receipts/new">
           <a className="inline-block bg-blue-700 text-white font-bold px-4 py-2 rounded">
             New Receipt
           </a>
