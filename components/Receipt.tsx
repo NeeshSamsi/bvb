@@ -1,9 +1,9 @@
+import { Prisma } from "@prisma/client"
+
 import Image from "next/image"
 import LogoText from "../assets/LogoText.png"
 
-import { ReceiptProps } from "../types"
-
-const Receipt = ({}: ReceiptProps) => {
+const Receipt = ({}: Prisma.ReceiptMaxAggregateOutputType) => {
   return (
     <div className="max-w-4xl border border-slate-800">
       <div className="flex flex-col items-center justify-center space-y-2 h-32 border-b border-slate-800">
