@@ -1,30 +1,8 @@
-type Fee = {
-  amount: number
-  remark: string
-}
+import { Prisma, PrismaClient } from "@prisma/client"
 
-type Address = {
-  line1: string
-  line2: string
-}
+export interface ReceiptMaxOutput
+  extends Prisma.ReceiptMaxAggregateOutputType {}
 
-export type ReceiptProps = {
-  invoiceNumber: number
-  invoiceDate: Date
-  name: string
-  class: string
-  address: Address
-  mobileNumber: string
-  emailId: string
-  pinCode: number
-  state: string
-  admissionFee: Fee
-  tuitionFee: Fee
-  otherFee: Fee
-  examinationFee: Fee
-  annualFee: Fee
-  lateMiscFee: Fee
-  paymentMethodNumber: string
-  paymentMethodDate: Date
-  branchName: string
-}
+export interface ReceiptFindManyArgs extends Prisma.ReceiptFindManyArgs {}
+
+export interface ReceiptWhereInput extends Prisma.ReceiptWhereInput {}
