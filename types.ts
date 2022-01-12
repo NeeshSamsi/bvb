@@ -1,4 +1,4 @@
-import { Prisma, PrismaClient } from "@prisma/client"
+import { Prisma } from "@prisma/client"
 
 export interface ReceiptMaxOutput
   extends Prisma.ReceiptMaxAggregateOutputType {}
