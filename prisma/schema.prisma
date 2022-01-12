@@ -20,7 +20,7 @@ model Receipt {
   addressLine2         String
   mobileNumber         String
   emailId              String
-  pinCode              String
+  pinCode              Int
   state                String
   admissionFee         Float
   admissionFeeRemark   String
@@ -39,6 +39,6 @@ model Receipt {
   totalInWords         String
   paymentMethod        String
   paymentNumber        String
-  dateOnPayment        String
+  dateOnPayment        DateTime
   branch               String
 }
