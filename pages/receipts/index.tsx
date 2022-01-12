@@ -1,15 +1,15 @@
 import type { NextPage } from "next"
+import type { ReceiptMaxOutput } from "../../types"
 
 import prisma from "../../lib/prisma"
 
 import Head from "next/head"
 import Link from "next/link"
 import { ReactNode } from "react"
-import { Prisma } from "@prisma/client"
 
 type Props = {
   children?: ReactNode
-  receipts: [] | Prisma.ReceiptMaxAggregateOutputType[]
+  receipts: [] | ReceiptMaxOutput[]
 }
 
 const Receipts: NextPage<Props> = ({ receipts }) => {
