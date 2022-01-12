@@ -11,27 +11,34 @@ datasource db {
 }
 
 model Receipt {
-  id             String   @id @default(cuid())
-  invoiceNumber  String
-  date           DateTime
-  name           String
-  class          String
-  addressLine1   String
-  addressLine2   String
-  mobileNumber   String
-  emailId        String
-  pinCode        String
-  state          String
-  admissionFee   Float
-  tuitionFee     Float
-  otherFee       Float
-  examinationFee Float
-  annualFee      Float
-  lateMiscFee    Float
-  totalFee       Float
-  receivedBy     String
-  totalInWords   String
-  paymentMethod  String
-  dateInWords    String
-  branch         String
+  id                   String   @id @default(cuid())
+  invoiceNumber        String
+  date                 DateTime
+  name                 String
+  class                String
+  addressLine1         String
+  addressLine2         String
+  mobileNumber         String
+  emailId              String
+  pinCode              String
+  state                String
+  admissionFee         Float
+  admissionFeeRemark   String
+  tuitionFee           Float
+  tuitionFeeRemark     String
+  otherFee             Float
+  otherFeeRemark       String
+  examinationFee       Float
+  examinationFeeRemark String
+  annualFee            Float
+  annualFeeRemark      String
+  lateMiscFee          Float
+  lateMiscFeeRemark    String
+  totalFee             Float
+  receivedBy           String
+  totalInWords         String
+  paymentMethod        String
+  paymentNumber        String
+  dateOnPayment        String
+  branch               String
 }
