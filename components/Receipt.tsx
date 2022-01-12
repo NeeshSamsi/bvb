@@ -1,11 +1,38 @@
-import { Prisma } from "@prisma/client"
+import type { ReceiptMaxOutput } from "../types"
 
 import Image from "next/image"
 import LogoText from "../assets/LogoText.png"
 
-const Receipt = ({}: Prisma.ReceiptMaxAggregateOutputType) => {
+const Receipt = ({ receipt }: { receipt: ReceiptMaxOutput[] }) => {
+  const {
+    id,
+    invoiceNumber,
+    date,
+    name,
+    class: receiptClass,
+    addressLine1,
+    addressLine2,
+    mobileNumber,
+    emailId,
+    pinCode,
+    state,
+    admissionFee,
+    tuitionFee,
+    otherFee,
+    examinationFee,
+    annualFee,
+    lateMiscFee,
+    totalFee,
+    receivedBy,
+    totalInWords,
+    paymentMethod,
+    dateInWords,
+    branch,
+  } = receipt[0]
+  const receiptDate = new Date(date!)
+
   return (
-    <div className="max-w-4xl border border-slate-800">
+    <div className="max-w-4xl mx-auto border border-slate-800">
       <div className="flex flex-col items-center justify-center space-y-2 h-32 border-b border-slate-800">
         <Image
           src={LogoText}
@@ -37,28 +64,36 @@ const Receipt = ({}: Prisma.ReceiptMaxAggregateOutputType) => {
           Invoice No. :
         </div>
         <div className="border-r border-b border-slate-800 py-1 px-2">
-          SNS/2021-2022/
-          <span className="font-bold">number</span>
+          SNS/
+          <span className="font-bold">{invoiceNumber}</span>
         </div>
         <div className="border-b border-slate-800 font-bold py-1 px-2">
-          Date : <span className="font-normal">07/01/2022</span>
+          Date :{" "}
+          <span className="font-normal">
+            {receiptDate.getDate()}/{receiptDate.getMonth() + 1}/
+            {receiptDate.getFullYear()}
+          </span>
         </div>
 
         <div className="border-r border-b border-slate-800 font-bold py-1 px-2">
           Name :
         </div>
-        <div className="border-r border-b border-slate-800 py-1 px-2"></div>
+        <div className="border-r border-b border-slate-800 py-1 px-2">
+          {name}
+        </div>
         <div className="border-b border-slate-800 font-bold py-1 px-2">
-          Class : <span className="font-normal">Meera Vocal</span>
+          Class : <span className="font-normal">{receiptClass}</span>
         </div>
 
         <div className="border-r border-b border-slate-800 font-bold py-1 px-2">
           Address :
         </div>
-        <div className="col-span-2 border-b border-slate-800 py-1 px-2"></div>
+        <div className="col-span-2 border-b border-slate-800 py-1 px-2">
+          {addressLine1}
+        </div>
 
         <div className="col-span-3 border-b border-slate-800 py-1 px-2">
-          Address Line 2
+          {addressLine2}
         </div>
       </div>
 

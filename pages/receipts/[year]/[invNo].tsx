@@ -1,10 +1,15 @@
+import { ReceiptMaxOutput } from "../../../types"
 import type { NextPage } from "next"
+
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-// import axios from "axios"
+
+import Receipt from "../../../components/Receipt"
 
 const SingleReceipt: NextPage = () => {
-  const [receipt, setReceipt] = useState(null)
+  const [receipt, setReceipt] = useState<ReceiptMaxOutput[]>(
+    [] as ReceiptMaxOutput[]
+  )
 
   const router = useRouter()
   const { year, invNo } = router.query
@@ -22,10 +27,7 @@ const SingleReceipt: NextPage = () => {
 
   return (
     <div>
-      <p>
-        Single Receipt with Invoice No. : SNS/{year}/{invNo}
-      </p>
-
+      {receipt.length > 0 ? <Receipt receipt={receipt} /> : <p>Loading...</p>}
       <pre>{JSON.stringify(receipt, null, 2)}</pre>
     </div>
   )
