@@ -2,7 +2,7 @@ import { ReceiptMaxOutput } from "../../../types"
 import type { NextPage } from "next"
 
 import { useRouter } from "next/router"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 import Receipt from "../../../components/Receipt"
 
@@ -25,20 +25,28 @@ const SingleReceipt: NextPage = () => {
     getReceipt()
   })
 
+  const printRef = useRef<HTMLDivElement>(null)
+
   const handlePrint = () => {
     window.print()
   }
 
   return (
-    <div>
-      {receipt.length > 0 ? <Receipt receipt={receipt} /> : <p>Loading...</p>}
-      <button
-        className="inline-block bg-blue-700 hover:bg-blue-600 text-white font-bold px-4 py-2 rounded"
-        onClick={handlePrint}
-      >
-        Print
-      </button>
-    </div>
+    <>
+      <div className="py-8">
+        <button
+          className="inline-block bg-blue-700 hover:bg-blue-600 text-white font-bold px-4 py-2 rounded"
+          onClick={handlePrint}
+        >
+          Print Receipt
+        </button>
+      </div>
+      {receipt.length > 0 ? (
+        <Receipt ref={printRef} receipt={receipt} />
+      ) : (
+        <p>Loading...</p>
+      )}
+    </>
   )
 }
 

@@ -1,9 +1,16 @@
 import type { ReceiptMaxOutput } from "../types"
 
+import React from "react"
 import Image from "next/image"
 import LogoText from "../assets/LogoText.png"
 
-const Receipt = ({ receipt }: { receipt: ReceiptMaxOutput[] }) => {
+interface IProps {
+  receipt: ReceiptMaxOutput[]
+}
+
+const Receipt = React.forwardRef<HTMLDivElement, IProps>((props, ref) => {
+  const { receipt } = props
+
   const {
     id,
     invoiceNumber,
@@ -40,7 +47,7 @@ const Receipt = ({ receipt }: { receipt: ReceiptMaxOutput[] }) => {
   const paymentDate = new Date(dateOnPayment!)
 
   return (
-    <div className="max-w-4xl mx-auto border-2 border-slate-800">
+    <div ref={ref} className="max-w-4xl mx-auto border-2 border-slate-800">
       <div className="flex flex-col items-center justify-center space-y-2 h-32 border-b border-slate-800">
         <Image
           src={LogoText}
@@ -281,6 +288,8 @@ const Receipt = ({ receipt }: { receipt: ReceiptMaxOutput[] }) => {
       </div>
     </div>
   )
-}
+})
+
+Receipt.displayName = "Receipt"
 
 export default Receipt
