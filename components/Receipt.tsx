@@ -17,19 +17,27 @@ const Receipt = ({ receipt }: { receipt: ReceiptMaxOutput[] }) => {
     pinCode,
     state,
     admissionFee,
+    admissionFeeRemark,
     tuitionFee,
+    tuitionFeeRemark,
     otherFee,
+    otherFeeRemark,
     examinationFee,
+    examinationFeeRemark,
     annualFee,
+    annualFeeRemark,
     lateMiscFee,
+    lateMiscFeeRemark,
     totalFee,
     receivedBy,
     totalInWords,
     paymentMethod,
-    dateInWords,
+    paymentNumber,
+    dateOnPayment,
     branch,
   } = receipt[0]
   const receiptDate = new Date(date!)
+  const paymentDate = new Date(dateOnPayment!)
 
   return (
     <div className="max-w-4xl mx-auto border border-slate-800">
@@ -99,17 +107,17 @@ const Receipt = ({ receipt }: { receipt: ReceiptMaxOutput[] }) => {
 
       <div className="grid grid-cols-2 text-sm">
         <div className="border-r border-b border-slate-800 font-bold py-1 px-2">
-          Mobile No. :<span className="font-normal"></span>
+          Mobile No. : <span className="font-normal">{mobileNumber}</span>
         </div>
         <div className="border-b border-slate-800 font-bold py-1 px-2">
-          Email ID. :<span className="font-normal"></span>
+          Email ID. : <span className="font-normal">{emailId}</span>
         </div>
 
         <div className="border-r border-b border-slate-800 font-bold py-1 px-2">
-          Pin Code :<span className="font-normal"></span>
+          Pin Code : <span className="font-normal">{pinCode}</span>
         </div>
         <div className="border-b border-slate-800 font-bold py-1 px-2">
-          State :<span className="font-normal"></span>
+          State : <span className="font-normal">{state}</span>
         </div>
 
         <div className="border-r border-b border-slate-800 font-bold py-1 px-2">
@@ -137,64 +145,78 @@ const Receipt = ({ receipt }: { receipt: ReceiptMaxOutput[] }) => {
         <div className="border-r border-b border-slate-800 py-1 px-2">1</div>
         <div className="border-r border-b border-slate-800 text-left py-1 px-2 grid grid-cols-1/2">
           <div>Admission Fee</div>
-          <div className="italic">(Remark - Jan to Mar)</div>
+          <div className="italic">(Remark - {admissionFeeRemark})</div>
         </div>
         <div className="border-r border-b border-slate-800 text-center py-1">
           9996
         </div>
-        <div className="border-b border-slate-800 text-center py-1"></div>
+        <div className="border-b border-slate-800 text-center py-1">
+          ₹{admissionFee}
+        </div>
         <div className="border-r border-b border-slate-800 py-1 px-2">2</div>
         <div className="border-r border-b border-slate-800 text-left py-1 px-2 grid grid-cols-1/2">
           <div>Tuition Fee</div>
-          <div className="italic">(Remark)</div>
+          <div className="italic">(Remark - {tuitionFeeRemark})</div>
         </div>
         <div className="border-r border-b border-slate-800 text-center py-1">
           9996
         </div>
-        <div className="border-b border-slate-800 text-center py-1"></div>
+        <div className="border-b border-slate-800 text-center py-1">
+          ₹{tuitionFee}
+        </div>
         <div className="border-r border-b border-slate-800 py-1 px-2">3</div>
         <div className="border-r border-b border-slate-800 text-left py-1 px-2 grid grid-cols-1/2">
           <div>Other Fee</div>
-          <div className="italic">(Remark)</div>
+          <div className="italic">(Remark - {otherFeeRemark})</div>
         </div>
         <div className="border-r border-b border-slate-800 text-center py-1">
           9996
         </div>
-        <div className="border-b border-slate-800 text-center py-1"></div>
+        <div className="border-b border-slate-800 text-center py-1">
+          ₹{otherFee}
+        </div>
         <div className="border-r border-b border-slate-800 py-1 px-2">4</div>
         <div className="border-r border-b border-slate-800 text-left py-1 px-2 grid grid-cols-1/2">
           <div>Examination Fee</div>
-          <div className="italic">(Test)</div>
+          <div className="italic">(Remark - {examinationFeeRemark})</div>
         </div>
         <div className="border-r border-b border-slate-800 text-center py-1">
           9996
         </div>
-        <div className="border-b border-slate-800 text-center py-1"></div>
+        <div className="border-b border-slate-800 text-center py-1">
+          ₹{examinationFee}
+        </div>
         <div className="border-r border-b border-slate-800 py-1 px-2">5</div>
         <div className="border-r border-b border-slate-800 text-left py-1 px-2 grid grid-cols-1/2">
           <div>Annual Fee</div>
-          <div className="italic">(Remark)</div>
+          <div className="italic">(Remark - {annualFeeRemark})</div>
         </div>
         <div className="border-r border-b border-slate-800 text-center py-1">
           9996
         </div>
-        <div className="border-b border-slate-800 text-center py-1"></div>
+        <div className="border-b border-slate-800 text-center py-1">
+          ₹{annualFee}
+        </div>
         <div className="border-r border-b border-slate-800 py-1 px-2">6</div>
         <div className="border-r border-b border-slate-800 text-left py-1 px-2 grid grid-cols-1/2">
           <div>Late / Misc. Fee</div>
-          <div className="italic">(Remark)</div>
+          <div className="italic">(Remark - {lateMiscFeeRemark})</div>
         </div>
         <div className="border-r border-b border-slate-800 text-center py-1">
           9996
         </div>
-        <div className="border-b border-slate-800 text-center py-1"></div>
+        <div className="border-b border-slate-800 text-center py-1">
+          ₹{lateMiscFee}
+        </div>
 
         <div className="border-r border-b border-slate-800 py-1 px-2"></div>
         <div className="border-r border-b border-slate-800 text-center py-1"></div>
         <div className="border-r border-b border-slate-800 text-center font-bold py-1">
           Total Rs.
         </div>
-        <div className="border-b border-slate-800 text-center py-1"></div>
+        <div className="border-b border-slate-800 text-center py-1 font-bold">
+          ₹{totalFee}
+        </div>
 
         <div className="border-r border-b border-slate-800 py-1 px-2"></div>
         <div className="border-r border-b border-slate-800 text-center py-1"></div>
@@ -229,12 +251,17 @@ const Receipt = ({ receipt }: { receipt: ReceiptMaxOutput[] }) => {
       <div className="p-2 text-sm">
         <p>
           Received with thanks from Shri / Smt. / Kum.{" "}
-          <span className="font-bold">Name</span>, the sum of Rupees{" "}
-          <span className="font-bold">Total amount in words</span> /- by Cash /
-          Cheque / D.D. No. <span className="font-bold">Number</span>. Dated{" "}
-          <span className="font-bold">Date on cheque</span> drawn on{" "}
-          <span className="font-bold">Name</span> Branch towards Invoices No.{" "}
-          <span className="font-bold">Invoice Number Years</span>
+          <span className="font-bold">{receivedBy}</span>, the sum of Rupees{" "}
+          <span className="font-bold">{totalInWords}</span> /- by{" "}
+          {paymentMethod} No. <span className="font-bold">{paymentNumber}</span>
+          . Dated{" "}
+          <span className="font-bold">
+            {paymentDate.getDate()}/{paymentDate.getMonth() + 1}/
+            {paymentDate.getFullYear()}
+          </span>{" "}
+          drawn on <span className="font-bold">{branch}</span> Branch towards
+          Invoices No.{" "}
+          <span className="font-bold">{invoiceNumber?.split("/")[0]}</span>
         </p>
       </div>
 
