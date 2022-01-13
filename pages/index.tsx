@@ -9,7 +9,7 @@ const Home: NextPage = () => {
         <title>Home | BVB SNS</title>
       </Head>
       <div>
-        <h1 className="text-3xl text-gray-800">Hello Next x Tailwind</h1>
+        <h1 className="text-3xl text-gray-900 text-center font-bold">BVB SNS Dashboard</h1>
       </div>
     </>
   )
