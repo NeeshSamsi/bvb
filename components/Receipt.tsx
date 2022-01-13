@@ -40,7 +40,7 @@ const Receipt = ({ receipt }: { receipt: ReceiptMaxOutput[] }) => {
   const paymentDate = new Date(dateOnPayment!)
 
   return (
-    <div className="max-w-4xl mx-auto border border-slate-800">
+    <div className="max-w-4xl mx-auto border-2 border-slate-800">
       <div className="flex flex-col items-center justify-center space-y-2 h-32 border-b border-slate-800">
         <Image
           src={LogoText}
@@ -68,14 +68,14 @@ const Receipt = ({ receipt }: { receipt: ReceiptMaxOutput[] }) => {
       </div>
 
       <div className="grid grid-cols-1/3/1 text-sm">
-        <div className="border-r border-b border-slate-800 font-bold py-1 px-2">
+        <div className="border-r border-b border-slate-800 font-bold py-2 px-4">
           Invoice No. :
         </div>
-        <div className="border-r border-b border-slate-800 py-1 px-2">
+        <div className="border-r border-b border-slate-800 py-2 px-4">
           SNS/
           <span className="font-bold">{invoiceNumber}</span>
         </div>
-        <div className="border-b border-slate-800 font-bold py-1 px-2">
+        <div className="border-b border-slate-800 font-bold py-2 px-4">
           Date :{" "}
           <span className="font-normal">
             {receiptDate.getDate()}/{receiptDate.getMonth() + 1}/
@@ -83,169 +83,169 @@ const Receipt = ({ receipt }: { receipt: ReceiptMaxOutput[] }) => {
           </span>
         </div>
 
-        <div className="border-r border-b border-slate-800 font-bold py-1 px-2">
+        <div className="border-r border-b border-slate-800 font-bold py-2 px-4">
           Name :
         </div>
-        <div className="border-r border-b border-slate-800 py-1 px-2">
+        <div className="border-r border-b border-slate-800 py-2 px-4">
           {name}
         </div>
-        <div className="border-b border-slate-800 font-bold py-1 px-2">
+        <div className="border-b border-slate-800 font-bold py-2 px-4">
           Class : <span className="font-normal">{receiptClass}</span>
         </div>
 
-        <div className="border-r border-b border-slate-800 font-bold py-1 px-2">
+        <div className="border-r border-b border-slate-800 font-bold py-2 px-4">
           Address :
         </div>
-        <div className="col-span-2 border-b border-slate-800 py-1 px-2">
+        <div className="col-span-2 border-b border-slate-800 py-2 px-4">
           {addressLine1}
         </div>
 
-        <div className="col-span-3 border-b border-slate-800 py-1 px-2">
+        <div className="col-span-3 border-b border-slate-800 py-2 px-4">
           {addressLine2}
         </div>
       </div>
 
       <div className="grid grid-cols-2 text-sm">
-        <div className="border-r border-b border-slate-800 font-bold py-1 px-2">
+        <div className="border-r border-b border-slate-800 font-bold py-2 px-4">
           Mobile No. : <span className="font-normal">{mobileNumber}</span>
         </div>
-        <div className="border-b border-slate-800 font-bold py-1 px-2">
+        <div className="border-b border-slate-800 font-bold py-2 px-4">
           Email ID. : <span className="font-normal">{emailId}</span>
         </div>
 
-        <div className="border-r border-b border-slate-800 font-bold py-1 px-2">
+        <div className="border-r border-b border-slate-800 font-bold py-2 px-4">
           Pin Code : <span className="font-normal">{pinCode}</span>
         </div>
-        <div className="border-b border-slate-800 font-bold py-1 px-2">
+        <div className="border-b border-slate-800 font-bold py-2 px-4">
           State : <span className="font-normal">{state}</span>
         </div>
 
-        <div className="border-r border-b border-slate-800 font-bold py-1 px-2">
+        <div className="border-r border-b border-slate-800 font-bold py-2 px-4">
           State of Supply :
           <span className="font-normal uppercase"> Maharashtra</span>
         </div>
-        <div className="border-b border-slate-800 font-bold py-1 px-2">
+        <div className="border-b border-slate-800 font-bold py-2 px-4">
           GSTIN :<span className="font-normal"></span>
         </div>
       </div>
 
       <div className="grid grid-cols-1/4/1/3 text-sm">
-        <div className="border-r border-b border-slate-800 font-bold py-1 px-2">
+        <div className="border-r border-b border-slate-800 font-bold py-2 px-4">
           Sr. No.
         </div>
-        <div className="border-r border-b border-slate-800 font-bold uppercase text-center py-1">
+        <div className="border-r border-b border-slate-800 font-bold uppercase text-center py-2">
           Description
         </div>
-        <div className="border-r border-b border-slate-800 font-bold uppercase text-center py-1">
+        <div className="border-r border-b border-slate-800 font-bold uppercase text-center py-2">
           HSN / SAC
         </div>
-        <div className="border-b border-slate-800 font-bold text-center py-1">
+        <div className="border-b border-slate-800 font-bold text-center py-2">
           Total Amount
         </div>
-        <div className="border-r border-b border-slate-800 py-1 px-2">1</div>
-        <div className="border-r border-b border-slate-800 text-left py-1 px-2 grid grid-cols-1/2">
+        <div className="border-r border-b border-slate-800 py-2 px-4">1</div>
+        <div className="border-r border-b border-slate-800 text-left py-2 px-4 grid grid-cols-1/2">
           <div>Admission Fee</div>
           <div className="italic">(Remark - {admissionFeeRemark})</div>
         </div>
-        <div className="border-r border-b border-slate-800 text-center py-1">
+        <div className="border-r border-b border-slate-800 text-center py-2">
           9996
         </div>
-        <div className="border-b border-slate-800 text-center py-1">
+        <div className="border-b border-slate-800 text-center py-2">
           ₹{admissionFee}
         </div>
-        <div className="border-r border-b border-slate-800 py-1 px-2">2</div>
-        <div className="border-r border-b border-slate-800 text-left py-1 px-2 grid grid-cols-1/2">
+        <div className="border-r border-b border-slate-800 py-2 px-4">2</div>
+        <div className="border-r border-b border-slate-800 text-left py-2 px-4 grid grid-cols-1/2">
           <div>Tuition Fee</div>
           <div className="italic">(Remark - {tuitionFeeRemark})</div>
         </div>
-        <div className="border-r border-b border-slate-800 text-center py-1">
+        <div className="border-r border-b border-slate-800 text-center py-2">
           9996
         </div>
-        <div className="border-b border-slate-800 text-center py-1">
+        <div className="border-b border-slate-800 text-center py-2">
           ₹{tuitionFee}
         </div>
-        <div className="border-r border-b border-slate-800 py-1 px-2">3</div>
-        <div className="border-r border-b border-slate-800 text-left py-1 px-2 grid grid-cols-1/2">
+        <div className="border-r border-b border-slate-800 py-2 px-4">3</div>
+        <div className="border-r border-b border-slate-800 text-left py-2 px-4 grid grid-cols-1/2">
           <div>Other Fee</div>
           <div className="italic">(Remark - {otherFeeRemark})</div>
         </div>
-        <div className="border-r border-b border-slate-800 text-center py-1">
+        <div className="border-r border-b border-slate-800 text-center py-2">
           9996
         </div>
-        <div className="border-b border-slate-800 text-center py-1">
+        <div className="border-b border-slate-800 text-center py-2">
           ₹{otherFee}
         </div>
-        <div className="border-r border-b border-slate-800 py-1 px-2">4</div>
-        <div className="border-r border-b border-slate-800 text-left py-1 px-2 grid grid-cols-1/2">
+        <div className="border-r border-b border-slate-800 py-2 px-4">4</div>
+        <div className="border-r border-b border-slate-800 text-left py-2 px-4 grid grid-cols-1/2">
           <div>Examination Fee</div>
           <div className="italic">(Remark - {examinationFeeRemark})</div>
         </div>
-        <div className="border-r border-b border-slate-800 text-center py-1">
+        <div className="border-r border-b border-slate-800 text-center py-2">
           9996
         </div>
-        <div className="border-b border-slate-800 text-center py-1">
+        <div className="border-b border-slate-800 text-center py-2">
           ₹{examinationFee}
         </div>
-        <div className="border-r border-b border-slate-800 py-1 px-2">5</div>
-        <div className="border-r border-b border-slate-800 text-left py-1 px-2 grid grid-cols-1/2">
+        <div className="border-r border-b border-slate-800 py-2 px-4">5</div>
+        <div className="border-r border-b border-slate-800 text-left py-2 px-4 grid grid-cols-1/2">
           <div>Annual Fee</div>
           <div className="italic">(Remark - {annualFeeRemark})</div>
         </div>
-        <div className="border-r border-b border-slate-800 text-center py-1">
+        <div className="border-r border-b border-slate-800 text-center py-2">
           9996
         </div>
-        <div className="border-b border-slate-800 text-center py-1">
+        <div className="border-b border-slate-800 text-center py-2">
           ₹{annualFee}
         </div>
-        <div className="border-r border-b border-slate-800 py-1 px-2">6</div>
-        <div className="border-r border-b border-slate-800 text-left py-1 px-2 grid grid-cols-1/2">
+        <div className="border-r border-b border-slate-800 py-2 px-4">6</div>
+        <div className="border-r border-b border-slate-800 text-left py-2 px-4 grid grid-cols-1/2">
           <div>Late / Misc. Fee</div>
           <div className="italic">(Remark - {lateMiscFeeRemark})</div>
         </div>
-        <div className="border-r border-b border-slate-800 text-center py-1">
+        <div className="border-r border-b border-slate-800 text-center py-2">
           9996
         </div>
-        <div className="border-b border-slate-800 text-center py-1">
+        <div className="border-b border-slate-800 text-center py-2">
           ₹{lateMiscFee}
         </div>
 
-        <div className="border-r border-b border-slate-800 py-1 px-2"></div>
-        <div className="border-r border-b border-slate-800 text-center py-1"></div>
-        <div className="border-r border-b border-slate-800 text-center font-bold py-1">
+        <div className="border-r border-b border-slate-800 py-2 px-4"></div>
+        <div className="border-r border-b border-slate-800 text-center py-2"></div>
+        <div className="border-r border-b border-slate-800 text-center font-bold py-2">
           Total Rs.
         </div>
-        <div className="border-b border-slate-800 text-center py-1 font-bold">
+        <div className="border-b border-slate-800 text-center py-2 font-bold">
           ₹{totalFee}
         </div>
 
-        <div className="border-r border-b border-slate-800 py-1 px-2"></div>
-        <div className="border-r border-b border-slate-800 text-center py-1"></div>
-        <div className="border-r border-b border-slate-800 text-center font-bold py-1">
+        <div className="border-r border-b border-slate-800 py-2 px-4"></div>
+        <div className="border-r border-b border-slate-800 text-center py-2"></div>
+        <div className="border-r border-b border-slate-800 text-center font-bold py-2">
           Taxable Amount
         </div>
-        <div className="border-b border-slate-800 text-center font-bold py-1">
+        <div className="border-b border-slate-800 text-center font-bold py-2">
           NIL
         </div>
 
-        <div className="border-slate-800 text-right font-bold py-1 px-2">
+        <div className="border-slate-800 text-right font-bold py-2 px-4">
           Note:
         </div>
-        <div className="border-r border-slate-800 text-left py-1 px-2">
+        <div className="border-r border-slate-800 text-left py-2 px-4">
           Please prepare cheque in favour of
         </div>
-        <div className="border-r border-slate-800 text-center font-bold uppercase py-1">
+        <div className="border-r border-slate-800 text-center font-bold uppercase py-2">
           SGST - NIL
         </div>
-        <div className="border-slate-800 text-center font-bold py-1"></div>
+        <div className="border-slate-800 text-center font-bold py-2"></div>
 
-        <div className="border-b border-slate-800 text-right font-bold py-1 px-2"></div>
-        <div className="border-r border-b border-slate-800 text-left font-bold py-1 px-2">
+        <div className="border-b border-slate-800 text-right font-bold py-2 px-4"></div>
+        <div className="border-r border-b border-slate-800 text-left font-bold py-2 px-4">
           Bharatiya Vidya Bhavan
         </div>
-        <div className="border-r border-b border-slate-800 text-center font-bold uppercase py-1">
+        <div className="border-r border-b border-slate-800 text-center font-bold uppercase py-2">
           CGST - NIL
         </div>
-        <div className="border-b border-slate-800 text-center font-bold py-1"></div>
+        <div className="border-b border-slate-800 text-center font-bold py-2"></div>
       </div>
 
       <div className="p-2 text-sm">
