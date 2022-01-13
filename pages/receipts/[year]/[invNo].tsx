@@ -25,10 +25,19 @@ const SingleReceipt: NextPage = () => {
     getReceipt()
   })
 
+  const handlePrint = () => {
+    window.print()
+  }
+
   return (
     <div>
       {receipt.length > 0 ? <Receipt receipt={receipt} /> : <p>Loading...</p>}
-      <pre>{JSON.stringify(receipt, null, 2)}</pre>
+      <button
+        className="inline-block bg-blue-700 hover:bg-blue-600 text-white font-bold px-4 py-2 rounded"
+        onClick={handlePrint}
+      >
+        Print
+      </button>
     </div>
   )
 }
