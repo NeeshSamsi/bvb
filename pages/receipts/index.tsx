@@ -6,6 +6,7 @@ import prisma from "../../lib/prisma"
 import Head from "next/head"
 import Link from "next/link"
 import { ReactNode } from "react"
+import { serializeDate } from "../../lib/utils"
 
 type Props = {
   children?: ReactNode
@@ -40,7 +41,11 @@ export const getServerSideProps = async () => {
   const data = await prisma?.receipt.findMany()
 
   const receipts = data.map((receipt) => {
-    return { ...receipt, date: new Date(receipt.date).toString() }
+    return {
+      ...receipt,
+      date: serializeDate(receipt.date),
+      dateOnPayment: serializeDate(receipt.dateOnPayment),
+    }
   })
 
   return {
