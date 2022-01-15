@@ -1,15 +1,15 @@
 import { ReceiptMaxOutput } from "../../../types"
 import type { NextPage } from "next"
 
-import ReactDOMServer from "react-dom/server"
-import jsPDF from "jspdf"
+// import ReactDOMServer from "react-dom/server"
+// import jsPDF from "jspdf"
 import { useRouter } from "next/router"
 import { createElement, useEffect, useRef, useState } from "react"
 
 import Receipt from "../../../components/Receipt"
 import TailwindCDN from "../../../components/TailwindCDN"
 
-const doc = new jsPDF()
+// const doc = new jsPDF()
 
 const SingleReceipt: NextPage = () => {
   const [receipt, setReceipt] = useState<ReceiptMaxOutput[]>(
