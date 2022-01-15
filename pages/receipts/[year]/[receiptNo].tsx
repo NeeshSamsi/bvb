@@ -3,6 +3,7 @@ import type { NextPage } from "next"
 
 // import ReactDOMServer from "react-dom/server"
 // import jsPDF from "jspdf"
+import axios, { AxiosResponse } from "axios"
 import { useRouter } from "next/router"
 import { createElement, useEffect, useRef, useState } from "react"
 
@@ -20,8 +21,11 @@ const SingleReceipt: NextPage = () => {
   const { year, receiptNo } = router.query
 
   const getReceipt = async () => {
-    const data = await fetch(`/api/receipts/${year}/${receiptNo}`)
-    const receipt = await data.json()
+    const data: AxiosResponse<ReceiptMaxOutput[]> = await axios.get(
+      `/api/receipts/${year}/${receiptNo}`
+    )
+
+    const receipt = data.data
 
     setReceipt(receipt)
   }
