@@ -6,3 +6,5 @@ export interface ReceiptMaxOutput
 export interface ReceiptFindManyArgs extends Prisma.ReceiptFindManyArgs {}
 
 export interface ReceiptWhereInput extends Prisma.ReceiptWhereInput {}
+
+export interface ReceiptCreateInput extends Prisma.ReceiptCreateInput {}
