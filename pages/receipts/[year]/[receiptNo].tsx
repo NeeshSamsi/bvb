@@ -43,7 +43,6 @@ const SingleReceipt: NextPage = () => {
     // console.log(downloadComponent)
     // console.log(ReactDOMServer.renderToStaticMarkup(downloadComponent))
     // // console.log(ReactDOMServer.renderToString(ReceiptComponent))
-
     // doc.html(ReactDOMServer.renderToStaticMarkup(downloadComponent), {
     //   callback: () => {
     //     doc.save(
@@ -51,8 +50,6 @@ const SingleReceipt: NextPage = () => {
     //     )
     //   },
     // })
-
-    alert("Downloading receipt not supported yet")
   }
 
   const handlePrint = () => {
@@ -60,19 +57,35 @@ const SingleReceipt: NextPage = () => {
   }
   return (
     <>
-      <div className="flex items-center space-x-4 print:hidden">
-        <button
-          className="inline-block bg-blue-700 hover:bg-blue-600 text-white font-bold mt-8 px-4 py-2 rounded"
-          onClick={handleDownload}
-        >
-          Download
-        </button>
-        <button
-          className="inline-block bg-blue-700 hover:bg-blue-600 text-white font-bold mt-8 px-4 py-2 rounded"
-          onClick={handlePrint}
-        >
-          Print
-        </button>
+      <div className="flex justify-between items-center print:hidden">
+        <div className="flex space-x-2">
+          <button className="inline-block bg-blue-700 hover:bg-blue-600 text-white font-bold mt-8 px-4 py-2 rounded">
+            Update
+          </button>
+          <button
+            className="inline-block bg-orange-700 hover:bg-orange-700/90 text-white font-bold mt-8 px-4 py-2 rounded"
+            onClick={() => alert("Unfortunately, Cancel not yet implemented.")}
+          >
+            Cancel
+          </button>
+        </div>
+
+        <div className="flex justify-end space-x-2">
+          <button
+            className="inline-block bg-blue-700 hover:bg-blue-600 text-white font-bold mt-8 px-4 py-2 rounded"
+            onClick={() =>
+              alert("Unfortunately, Download not yet implemented.")
+            }
+          >
+            Download
+          </button>
+          <button
+            className="inline-block bg-blue-700 hover:bg-blue-600 text-white font-bold mt-8 px-4 py-2 rounded"
+            onClick={handlePrint}
+          >
+            Print
+          </button>
+        </div>
       </div>
 
       {receipt.length > 0 ? (
