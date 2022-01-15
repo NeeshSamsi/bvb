@@ -49,10 +49,7 @@ const Receipt = React.forwardRef<HTMLDivElement, IProps>((props, ref) => {
 
   return (
     <>
-      <div
-        ref={ref}
-        className="max-w-4xl mx-auto my-12 print:my-0 border-2 border-slate-800"
-      >
+      <div ref={ref} className="my-12 print:my-0 border-2 border-slate-800">
         <div className="flex flex-col items-center justify-center space-y-2 h-32 border-b border-slate-800">
           <Image
             src={LogoText}
@@ -281,7 +278,9 @@ const Receipt = React.forwardRef<HTMLDivElement, IProps>((props, ref) => {
 
         <div className="flex justify-center space-x-24 py-6">
           <div className="w-48 flex items-center flex-col">
-            <div className="text-base font-bold font-serif">Kavita Samsi</div>
+            <div className="text-base font-bold font-serif text-transparent">
+              Kavita Samsi
+            </div>
             <div className="w-full h-px bg-slate-800"></div>
             <p className="text-sm">Received by</p>
           </div>

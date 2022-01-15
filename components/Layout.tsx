@@ -8,7 +8,7 @@ const Layout = ({ children }: Props) => {
   return (
     <>
       <NavBar />
-      <main className="container mx-auto">{children}</main>
+      <main className="max-w-5xl mx-auto">{children}</main>
     </>
   )
 }
