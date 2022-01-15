@@ -20,19 +20,39 @@ const Receipts: NextPage<Props> = ({ receipts }) => {
         <title>Receipts | BVB SNS</title>
       </Head>
 
-      <div className="py-8">
-        <Link href="/receipts/new">
-          <a className="inline-block bg-blue-700 text-white font-bold px-4 py-2 rounded">
-            New Receipt
-          </a>
-        </Link>
-      </div>
+      <Link href="/receipts/new">
+        <a className="inline-block bg-blue-700 text-white font-bold px-4 py-2 my-8 rounded">
+          New Receipt
+        </a>
+      </Link>
 
-      <div className="flex flex-wrap">
-        <h1 className="text-3xl text-gray-800 py-4">Show All Receipts</h1>
-      </div>
+      <div className="flex flex-col space-y-4">
+        <h1 className="text-4xl text-gray-800 py-4">All Receipts</h1>
 
-      <pre>{JSON.stringify(receipts, null, 2)}</pre>
+        {receipts.length > 0 ? (
+          <div className="flex flex-col space-y-4">
+            {receipts.map((receipt) => (
+              <Link
+                href={`/receipts/${receipt.receiptNumber}`}
+                key={receipt.id}
+              >
+                <a className="flex justify-between items-center space-x-4 bg-slate-300 p-4 rounded-lg shadow-lg shadow-slate-700/30 text-xl text-slate-800">
+                  <div className="flex flex-col space-y-2">
+                    <h5 className="text-2xl">{receipt.receiptNumber}</h5>
+                    <p>{receipt.name}</p>
+                  </div>
+                  <div className="font-bold text-slate-700">
+                    <p className="font-normal">Total Fee: </p>
+                    <h6>₹ {receipt.totalFee}</h6>
+                  </div>
+                </a>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
     </>
   )
 }
