@@ -3,7 +3,7 @@ const prisma = new PrismaClient()
 
 const receipts: Prisma.ReceiptCreateInput[] = [
   {
-    invoiceNumber: "21-22/165",
+    receiptNumber: "21-22/165",
     date: new Date(),
     name: "Neesh",
     class: "Meera Vocal",
@@ -34,7 +34,7 @@ const receipts: Prisma.ReceiptCreateInput[] = [
     branch: "Hughes Road",
   },
   {
-    invoiceNumber: "21-22/166",
+    receiptNumber: "21-22/166",
     date: new Date(),
     name: "Avaneesh",
     class: "Vaibhav Tabla",
@@ -65,7 +65,7 @@ const receipts: Prisma.ReceiptCreateInput[] = [
     branch: "Gamdevi",
   },
   {
-    invoiceNumber: "21-22/167",
+    receiptNumber: "21-22/167",
     date: new Date(),
     name: "Kavita",
     class: "Tushar Sitar",

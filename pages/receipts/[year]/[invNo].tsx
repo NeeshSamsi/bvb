@@ -17,10 +17,10 @@ const SingleReceipt: NextPage = () => {
   )
 
   const router = useRouter()
-  const { year, invNo } = router.query
+  const { year, receiptNo } = router.query
 
   const getReceipt = async () => {
-    const data = await fetch(`/api/receipts/${year}/${invNo}`)
+    const data = await fetch(`/api/receipts/${year}/${receiptNo}`)
     const receipt = await data.json()
 
     setReceipt(receipt)
@@ -47,7 +47,7 @@ const SingleReceipt: NextPage = () => {
     // doc.html(ReactDOMServer.renderToStaticMarkup(downloadComponent), {
     //   callback: () => {
     //     doc.save(
-    //       `receipt_sns-${receipt[0].invoiceNumber?.split("/").join("-")}.pdf`
+    //       `receipt_sns-${receipt[0].receiptNumber?.split("/").join("-")}.pdf`
     //     )
     //   },
     // })

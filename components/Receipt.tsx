@@ -14,7 +14,7 @@ const Receipt = React.forwardRef<HTMLDivElement, IProps>((props, ref) => {
 
   const {
     id,
-    invoiceNumber,
+    receiptNumber,
     date,
     name,
     class: receiptClass,
@@ -87,7 +87,7 @@ const Receipt = React.forwardRef<HTMLDivElement, IProps>((props, ref) => {
           </div>
           <div className="border-r border-b border-slate-800 py-2 px-4">
             SNS/
-            <span className="font-bold">{invoiceNumber}</span>
+            <span className="font-bold">{receiptNumber}</span>
           </div>
           <div className="border-b border-slate-800 font-bold py-2 px-4">
             Date :{" "}
@@ -275,7 +275,7 @@ const Receipt = React.forwardRef<HTMLDivElement, IProps>((props, ref) => {
             </span>{" "}
             drawn on <span className="font-bold">{branch}</span> Branch towards
             Invoices No.{" "}
-            <span className="font-bold">{invoiceNumber?.split("/")[0]}</span>
+            <span className="font-bold">{receiptNumber?.split("/")[0]}</span>
           </p>
         </div>
 

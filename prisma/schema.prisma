@@ -12,7 +12,7 @@ datasource db {
 
 model Receipt {
   id                   String   @id @default(cuid())
-  invoiceNumber        String
+  receiptNumber        String
   date                 DateTime
   name                 String
   class                String
