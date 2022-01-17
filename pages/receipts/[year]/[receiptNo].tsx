@@ -59,15 +59,14 @@ const SingleReceipt: NextPage = () => {
   const handlePrint = () => {
     window.print()
   }
+
   return (
     <>
-      <div className="flex justify-between items-center print:hidden">
+      <div className="flex justify-between items-center mt-8 print:hidden">
         <div className="flex space-x-2">
-          <button className="inline-block bg-blue-700 hover:bg-blue-600 text-white font-bold mt-8 px-4 py-2 rounded">
-            Update
-          </button>
+          <button className="btn-primary">Update</button>
           <button
-            className="inline-block bg-orange-700 hover:bg-orange-700/90 text-white font-bold mt-8 px-4 py-2 rounded"
+            className="btn-warn"
             onClick={() => alert("Unfortunately, Cancel not yet implemented.")}
           >
             Cancel
@@ -76,17 +75,14 @@ const SingleReceipt: NextPage = () => {
 
         <div className="flex justify-end space-x-2">
           <button
-            className="inline-block bg-blue-700 hover:bg-blue-600 text-white font-bold mt-8 px-4 py-2 rounded"
+            className="btn-primary"
             onClick={() =>
               alert("Unfortunately, Download not yet implemented.")
             }
           >
             Download
           </button>
-          <button
-            className="inline-block bg-blue-700 hover:bg-blue-600 text-white font-bold mt-8 px-4 py-2 rounded"
-            onClick={handlePrint}
-          >
+          <button className="btn-primary" onClick={handlePrint}>
             Print
           </button>
         </div>
